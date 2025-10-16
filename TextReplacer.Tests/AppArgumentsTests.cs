@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TextReplacer.Models;
+﻿using TextReplacer.Models;
 using FluentAssertions;
-using Xunit;
 
 namespace TextReplacer.Tests
 {
