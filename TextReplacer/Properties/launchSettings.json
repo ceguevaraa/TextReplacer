@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TextReplacer": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Cesar-Personal\\otroejemplo.txt C:\\Cesar-Personal\\Result.txt auraportal ap"
+    }
+  }
+}
