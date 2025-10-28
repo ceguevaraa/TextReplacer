@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "QueryGenerator": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Cesar-Personal\\Personal\\Contratos-Documentos\\EventsTur\\Catering\\municipis.json"
+    }
+  }
+}
