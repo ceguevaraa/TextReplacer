@@ -60,6 +60,9 @@ internal static class Program
         }
 
         var path = args[0];
+        var outputPath = args.Length > 1
+            ? args[1]
+            : DetermineDefaultOutputPath(path);
 
         if (!File.Exists(path))
         {
@@ -74,17 +77,34 @@ internal static class Program
             using var document = JsonDocument.Parse(json);
             var root = document.RootElement;
 
-            foreach (var sql in GenerateStatements(root))
-            {
-                Console.WriteLine(sql);
-                Console.WriteLine();
-            }
+            WriteStatementsToFile(outputPath, GenerateStatements(root));
+            Console.WriteLine($"Generated SQL written to '{outputPath}'.");
         }
         catch (JsonException jsonEx)
         {
             Console.Error.WriteLine($"Invalid JSON input: {jsonEx.Message}");
             Environment.ExitCode = 1;
         }
+    }
+
+    private static string DetermineDefaultOutputPath(string inputPath)
+    {
+        var pathWithSqlExtension = Path.ChangeExtension(inputPath, ".sql");
+        return string.IsNullOrWhiteSpace(pathWithSqlExtension)
+            ? inputPath + ".sql"
+            : pathWithSqlExtension;
+    }
+
+    private static void WriteStatementsToFile(string outputPath, IEnumerable<string> statements)
+    {
+        var directory = Path.GetDirectoryName(outputPath);
+        if (!string.IsNullOrEmpty(directory))
+        {
+            Directory.CreateDirectory(directory);
+        }
+
+        var content = string.Join(Environment.NewLine + Environment.NewLine, statements);
+        File.WriteAllText(outputPath, content);
     }
 
     private static IEnumerable<string> GenerateStatements(JsonElement root)
