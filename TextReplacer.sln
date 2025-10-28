@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextReplacer", "TextReplace
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextReplacer.Tests", "TextReplacer.Tests\TextReplacer.Tests.csproj", "{7BACED83-06D6-49B8-A474-20F4B86F0838}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueryGenerator", "QueryGenerator\QueryGenerator.csproj", "{7381ED62-E2DE-4B04-8D20-669646208090}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7BACED83-06D6-49B8-A474-20F4B86F0838}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7BACED83-06D6-49B8-A474-20F4B86F0838}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7BACED83-06D6-49B8-A474-20F4B86F0838}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7381ED62-E2DE-4B04-8D20-669646208090}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7381ED62-E2DE-4B04-8D20-669646208090}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7381ED62-E2DE-4B04-8D20-669646208090}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7381ED62-E2DE-4B04-8D20-669646208090}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
